@@ -11,7 +11,7 @@ def checknum():
                 if j * i < 10:
                     print(j * i, end="    ")
                     j += 1
-                elif j * i > 100:
+                elif j * i >= 100:
                     print(j * i, end="  ")
                     j += 1
                 else:
@@ -21,7 +21,6 @@ def checknum():
             print()
 
     elif n > 20 or n < 1:
-            valid = False
             print("try again")
             checknum()
     else:
