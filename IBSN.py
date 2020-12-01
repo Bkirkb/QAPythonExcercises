@@ -74,8 +74,5 @@ def totaldigits():
     print("IBSN IS " ,altered1,"-",second,"-",altered3,"-",altered4,"-",fifth)
     print("digit 13 has a remainder of", digit13 % 10 )
 
-    
+
 totaldigits()
-
-
-
