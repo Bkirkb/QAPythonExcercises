@@ -1,8 +1,24 @@
-number = int(input("Please enter the number to retrieve the times table"))
-count = int
-final_num = int
+a = int(input("Please enter first number"))
+b = int(input("Please enter second number"))
 
-final_num = number * number
-while number > 0 and count < final_num:
-    count += 1
-    print (number * count)
+
+def checkinputs(a,b):
+    
+    while a % b != 0:
+        a = int("Please enter first number")
+        b = int("Please enter first number")
+
+        if a % b == 0:
+            divisible(a,b)
+
+
+def divisible(a,b):
+
+    if a / b and a % b == 0:
+        print("Number is divisible with a remainder of 0") 
+    else:
+        print("can't divide")
+        return(a,b)
+        
+divisible(a,b)
+checkinputs(a,b)

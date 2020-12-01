@@ -4,7 +4,8 @@ mvalid = bool
 cvalid = bool
 pvalid = bool
 
-def inputs():
+def inputs(m_mark, c_mark, p_mark, total_mark):
+
         m_mark = int(input("Please Enter Your Maths Mark: "))
         if m_mark > 100 or m_mark < 0:
             mvalid = False
@@ -46,9 +47,12 @@ def inputs():
         elif p_mark < 101 and p_mark > 0:
             p_mark = p_mark
             pvalid = True
-    
+            checkmark(total_mark , m_mark , c_mark , p_mark)   
+            return total_mark , m_mark , c_mark , p_mark
+                 
         
-        total_mark = (m_mark + c_mark + p_mark) / 3
+
+def checkmark(m_mark, c_mark, p_mark, total_mark):
 
         if  total_mark >= 70:
             print("Your Percentage Score is 3" , total_mark , "%")
@@ -74,5 +78,7 @@ def inputs():
         print("Your Chemistry Mark is " , c_mark)
         print("Your Physics Mark is " , p_mark)
 
+        return m_mark, c_mark, p_mark, total_mark
 
-inputs()
+
+inputs(m_mark, c_mark, p_mark, total_mark)
