@@ -1,24 +1,31 @@
-a = int(input("Please enter first number"))
-b = int(input("Please enter second number"))
+def checknum():
 
+    n = int(input("Please enter a number between 1-20 for times tables: "))
+    i = 1
 
-def checkinputs(a,b):
-    
-    while a % b != 0:
-        a = int("Please enter first number")
-        b = int("Please enter first number")
-
-        if a % b == 0:
-            divisible(a,b)
-
-
-def divisible(a,b):
-
-    if a / b and a % b == 0:
-        print("Number is divisible with a remainder of 0") 
-    else:
-        print("can't divide")
-        return(a,b)
+    if n <= 20 and n > 1:
         
-divisible(a,b)
-checkinputs(a,b)
+        while i < n + 1:
+            j = 1
+            while j < n + 1:
+                if j * i < 10:
+                    print(j * i, end="    ")
+                    j += 1
+                elif j * i > 100:
+                    print(j * i, end="  ")
+                    j += 1
+                else:
+                    print(j * i, end="   ")
+                    j += 1
+            i += 1
+            print()
+
+    elif n > 20 or n < 1:
+            valid = False
+            print("try again")
+            checknum()
+    else:
+        print("Hidden Error")
+            
+
+checknum()
