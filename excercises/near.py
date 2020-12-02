@@ -1,27 +1,39 @@
-newlist1 = []
-newlist2 = []
+def isnear(s1,s2):
+
+    s1 = s1.casefold()
+    s2 = s2.casefold()
+
+    w1 = list(s1)
+    w2 = list(s2)
+    w1l = len(w1)
+    w2l = len(w2)
 
 
-def checkchars():
-    word1 = str(input("Please enter the first word: "))
-    word2 = str(input("Please enter the second word: "))
-
-    w1list = [str(c) for c in word1]
-    w2list = [str(c) for c in word2]
-
-    print("Word1 list is: " , w1list)
-    print("Word2 list is: ", w2list)
-
-    for c in w1list:
-        print(c)
+    if w1l > w2l or w1l == w2l:
     
-    for c in w2list:
-        newlist2.append(c)
-        swordletters = len(newlist2)
-        print(newlist2)
-        print(int(swordletters))
+        for i in range(0,w1l):
+            w1t = list(s1)
+            w1t.pop(i)
+            if w1t == w2:
+                w1tj = ''.join(w1t)
+                print(f"{s1} is close to {w1tj} ")
+                return True
+            else:
+                waiting = True
+        else:
+            print(f"{s1} is not close to {s2}")
+    else:
+        return False
+                
+       
+        
+    
 
 
-checkchars()
-
-
+isnear("shed", "bed")
+isnear("bread","read")
+isnear("leaf","lef")
+isnear("grief","fire")
+isnear("Dragoon","Dragon")
+isnear("Life","Like")
+isnear("sHank", "Hank")
